@@ -16,6 +16,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        //new activity called chemistry//
+        <activity android:name=".chemistry">
+
+        </activity>
+        //new activity called math//
+        <activity android:name=".math">
+
+        </activity>
+        //new activity called phy//
+        <activity android:name=".phy">
+
+        </activity>
+        //new activity called his//
+        <activity android:name=".his">
+
+        </activity>
     </application>
 
 </manifest>

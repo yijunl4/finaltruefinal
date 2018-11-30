@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">simplequiz</string>
+    <string name="welcome_to_the_simple_quiz">welcome to the simple quiz</string>
+    <string name="chemistry">chemistry</string>
+    <string name="math">math</string>
+    <string name="physics">physics</string>
+    <string name="this_is_math_question">this is math question</string>
+    <string name="this_is_physics_question">this is physics question</string>
+    <string name="this_is_history_question">this is history question</string>
+    <string name="history">history</string>
+    <string name="help_give_some_instructions">help_give_some_instructions</string>
+    <string name="highest_point">highest_point</string>
+    <string name="this_is_chemistry_question">this is chemistry question</string>
 </resources>
