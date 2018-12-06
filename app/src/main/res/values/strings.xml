@@ -10,5 +10,9 @@
     <string name="history">history</string>
     <string name="help_give_some_instructions">help_give_some_instructions</string>
     <string name="highest_point">highest_point</string>
-    <string name="this_is_chemistry_question">this is chemistry question</string>
+    <string name="chemquestion">chemquestion[5qn]</string>
+    <string name="choicea">chemquestion[5qn + 1]</string>
+    <string name="whattosay">In_this_quiz,_you_will_firstly_choose_a_subject_and_each_subject_will_have_about_20_questions.</string>
+    <string-array name="chemquestion">{}</string-array>
+    <integer name="qn">1</integer>
 </resources>

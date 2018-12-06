@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class truefinal extends AppCompatActivity {
 
@@ -12,6 +13,7 @@ public class truefinal extends AppCompatActivity {
     Button tomath;
     Button tophy;
     Button tohis;
+    ImageButton toinstructions;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,18 @@ public class truefinal extends AppCompatActivity {
                 intent3.setClass(truefinal.this, his.class);
 
                 startActivity(intent3);
+            }
+        });
+        toinstructions = (ImageButton) findViewById(R.id.toinstructions);
+        toinstructions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //here start chemistry layout//
+
+                Intent intent4 = new Intent();
+                intent4.setClass(truefinal.this, instructions.class);
+
+                startActivity(intent4);
             }
         });
     }

@@ -33,6 +33,10 @@
         <activity android:name=".his">
 
         </activity>
+        //new activity called instructions
+        <activity android:name=".instructions">
+
+        </activity>
     </application>
 
 </manifest>
