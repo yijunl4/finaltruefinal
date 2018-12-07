@@ -11,8 +11,16 @@
     <string name="help_give_some_instructions">help_give_some_instructions</string>
     <string name="highest_point">highest_point</string>
     <string name="chemquestion">chemquestion[5qn]</string>
-    <string name="choicea">chemquestion[5qn + 1]</string>
-    <string name="whattosay">In_this_quiz,_you_will_firstly_choose_a_subject_and_each_subject_will_have_about_20_questions.</string>
-    <string-array name="chemquestion">{}</string-array>
+    <string name="choicea">achoice</string>
+    <string name="whattosay">In this quiz, you will firstly choose a subject and each subject will have about 20 questions.</string>
+    <string-array name="chemquestionarray">{"While traveling, an airplane passenger placed a bag
+        of potato chips in his checked luggage. When he opened the luggage, the bag had exploded
+        and potato chips were everywhere in his luggage. Which gas law is this an example of?",
+        "Consider the following compound: CH4, CH3CH3, CH3CH2Cl and CH3CH2OH, which one has
+        the highest boiling point?"}</string-array>
+    <string name="rowtext">//////
+
+///</string>
+    <string name="next">next</string>
     <integer name="qn">1</integer>
 </resources>
