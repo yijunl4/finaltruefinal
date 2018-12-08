@@ -12,15 +12,7 @@
     <string name="highest_point">highest_point</string>
     <string name="chemquestion">chemquestion[5qn]</string>
     <string name="choicea">achoice</string>
-    <string name="whattosay">In this quiz, you will firstly choose a subject and each subject will have about 20 questions.</string>
-    <string-array name="chemquestionarray">{"While traveling, an airplane passenger placed a bag
-        of potato chips in his checked luggage. When he opened the luggage, the bag had exploded
-        and potato chips were everywhere in his luggage. Which gas law is this an example of?",
-        "Consider the following compound: CH4, CH3CH3, CH3CH2Cl and CH3CH2OH, which one has
-        the highest boiling point?"}</string-array>
-    <string name="rowtext">//////
-
-///</string>
+    <string name="whattosay">In this quiz, you will firstly choose a subject and each subject will have about 20 questions. The result will not be shown util you reach the end.</string>
+    <string name="grade">Your result is not available now.</string>
     <string name="next">next</string>
-    <integer name="qn">1</integer>
 </resources>

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.view.View;
 public class chemistry extends Activity {
@@ -23,8 +24,13 @@ public class chemistry extends Activity {
             "surface tension",
             "hydrogen bonding",
             "viscosity"};
+    private char[] correctanswer = {'D','D','C','B'};
+    private char[] youranswer = new char[array.length];
+    private String toprinted;
     //above is the resoure used in coding, below is the items from layout//
     TextView chemquestion;
+    TextView printed;
+    RadioGroup choices;
     RadioButton choicea;
     RadioButton choiceb;
     RadioButton choicec;
@@ -34,6 +40,11 @@ public class chemistry extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chemistry);
+        //below is to set the group//
+        printed = (TextView) findViewById(R.id.textView5);
+        choices = (RadioGroup) findViewById(R.id.choices);
+        choices.setOnCheckedChangeListener(listen);
+        //below is the question and choices set//
         chemquestion = findViewById(R.id.question);
         chemquestion.setText(array[questionnumber]);
         choicea = findViewById(R.id.choicea);
@@ -44,10 +55,13 @@ public class chemistry extends Activity {
         choicec.setText(choicearray[4 * questionnumber + 2]);
         choiced = findViewById(R.id.choiced);
         choiced.setText(choicearray[4 * questionnumber + 3]);
+        //below is to set the next button//
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V) {
                 if (questionnumber >= array.length - 1) {
+                    toprinted = "Your get " + getgrade() + " questions correct";
+                    printed.setText(toprinted);
                     return;
                 }
                 questionnumber++;
@@ -56,7 +70,39 @@ public class chemistry extends Activity {
                 choiceb.setText(choicearray[4 * questionnumber + 1]);
                 choicec.setText(choicearray[4 * questionnumber + 2]);
                 choiced.setText(choicearray[4 * questionnumber + 3]);
+                choices.clearCheck();
+
             }
         });
+    }
+    private RadioGroup.OnCheckedChangeListener listen=new RadioGroup.OnCheckedChangeListener() {
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            int id=	group.getCheckedRadioButtonId();
+            switch (group.getCheckedRadioButtonId()) {
+                case R.id.choicea:
+                    youranswer[questionnumber] = 'A';
+                    break;
+                case R.id.choiceb:
+                    youranswer[questionnumber] = 'B';
+                    break;
+                case R.id.choicec:
+                    youranswer[questionnumber] = 'C';
+                    break;
+                case R.id.choiced:
+                    youranswer[questionnumber] = 'D';
+                    break;
+            }
+        }
+    };
+    public int getgrade() {
+        int correct = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (correctanswer[i] == youranswer[i]) {
+                correct++;
+            }
+        }
+        return correct;
     }
 }
