@@ -12,7 +12,13 @@ public class chemistry extends Activity {
     private String[] array = {"While traveling, an airplane passenger placed a bag of potato chips in his checked luggage. When he opened the luggage, the bag had exploded and potato chips were everywhere in his luggage. Which gas law is this an example of?",
             "Consider the following compound: CH4, CH3CH3, CH3CH2Cl and CH3CH2OH, which one has the highest boiling point?",
             "To increase solubility of a gas into a liquid the most, then______.",
-            "In a liquid, the energy required to increase the surface of the area by a unit amount is called___"};
+            "In a liquid, the energy required to increase the surface of the area by a unit amount is called___",
+            "according to teh kinetic molecular theory, the pressure of a gas in a container will decrease if the _____",
+            "Two moles of neon gas at 20.0 degree are heated to 350 degree while the volume is kept constant. The density of the gas____",
+            "An approximation of absolute zero was made from an extrapolation of__",
+            "Which of the following statements is true about Aluminum oxide: Al2O3",
+            "In the current model of atom, it assumes that nearly all of an atom's mass is contained in a central nucleus, whereas most of an atom's volume is due to the space in which the atom's electron move around it. Before quantum mechanical models, the historic experiment that established this idea was",
+            "Which of the following statement is false?"};
     private int questionnumber = 0;
     private String[] choicearray = {"Avogadro's Law", "Ideal Gas Law", "Charles's Law", "Boyle's Law",
             "CH4", "CH3CH3", "CH3CH2Cl", "CH3CH2OH",
@@ -23,8 +29,23 @@ public class chemistry extends Activity {
             "dipole-dipole force",
             "surface tension",
             "hydrogen bonding",
-            "viscosity"};
-    private char[] correctanswer = {'D','D','C','B'};
+            "viscosity",
+            "number of collisions with the container wall increases",
+            "number of moles of the gas increases",
+            "temperature of the gas decreases",
+            "volume of the container decreases",
+            "decreases", "increases", "doubles", "remains the same",
+            "V vs.1/T", "V vs. T", "n vs V", "P vs. 1/V",
+            "Aluminum accounts for a higher mass precentage than oxygen",
+            "oxygen accounts for higher mass percentage than aluminum",
+            "Since aluminum has a higher average atomic mass than oxygen, it is expected to be the greater contirbutor towards the mass of the compound anywas.",
+            "Since aluminum has a lower average atomic mass than aluminum, it is expected to be the lesser contirbutor towards the mass of the compound anywas.",
+            "Millikan's oil drop experiment", "++Rutherford's gold foil experiment", "Thomson's cathode ray tube experiment", "Einstein's Photo-electric effect experiments",
+            "An orbital can accommodate at most two electrons",
+            "The spin quantum number of an electron must be either +1/2 or -1/2",
+            "A 2p orbital is more penetrating than a 2S;i.e, 2p has a higher electron density near the nucleus and thus a 2p electron can penetrate into the cloud of a 1s orbital than a 2s electron can",
+            "In the order of filling, the 6S orbital is filled before the 4f orbtital"};
+    private char[] correctanswer = {'D','D','C','B','C','D','B','A','B','C'};
     private char[] youranswer = new char[array.length];
     private String toprinted;
     //above is the resoure used in coding, below is the items from layout//
@@ -36,6 +57,7 @@ public class chemistry extends Activity {
     RadioButton choicec;
     RadioButton choiced;
     Button next;
+    TextView highest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +78,7 @@ public class chemistry extends Activity {
         choiced = findViewById(R.id.choiced);
         choiced.setText(choicearray[4 * questionnumber + 3]);
         //below is to set the next button//
+        highest = (TextView) findViewById(R.id.grade);
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V) {
