@@ -3,6 +3,7 @@ package com.example.yijun.finaltruefinal;
 import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -62,14 +63,15 @@ public class chemistry extends Activity {
     RadioButton choicec;
     RadioButton choiced;
     Button next;
-    TextView highest;
     MediaPlayer mp;
+    Vibrator vibrator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chemistry);
         //below is to set the group//
         MediaPlayer mp = null;
+        vibrator = (Vibrator)this.getSystemService(this.VIBRATOR_SERVICE);
         printed = (TextView) findViewById(R.id.textView5);
         choices = (RadioGroup) findViewById(R.id.choices);
         choices.setOnCheckedChangeListener(listen);
@@ -92,6 +94,7 @@ public class chemistry extends Activity {
                     playmusic(R.raw.correct);
                 } else {
                     playmusic(R.raw.incorrect);
+                    vibrator.vibrate(1000);
                 }
                 if (questionnumber >= array.length - 1) {
                     toprinted = "Your get " + getgrade() + " questions correct";
