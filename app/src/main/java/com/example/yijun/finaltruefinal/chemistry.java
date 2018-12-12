@@ -9,6 +9,10 @@ import android.widget.TextView;
 import android.view.View;
 public class chemistry extends Activity {
 
+    //what i did is to put everything and code in the activity, including questions, choices, and anwsers//
+    //array is the String array of questinos, choicearray is the String array of choices. correctanwser is the char array of answer
+    //youranwser will be recorded when the app is running, and at last the two char array will be compared//
+    //and return the grade//
     private String[] array = {"While traveling, an airplane passenger placed a bag of potato chips in his checked luggage. When he opened the luggage, the bag had exploded and potato chips were everywhere in his luggage. Which gas law is this an example of?",
             "Consider the following compound: CH4, CH3CH3, CH3CH2Cl and CH3CH2OH, which one has the highest boiling point?",
             "To increase solubility of a gas into a liquid the most, then______.",
