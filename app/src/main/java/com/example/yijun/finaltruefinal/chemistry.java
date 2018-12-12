@@ -1,6 +1,7 @@
 package com.example.yijun.finaltruefinal;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -62,11 +63,13 @@ public class chemistry extends Activity {
     RadioButton choiced;
     Button next;
     TextView highest;
+    MediaPlayer mp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chemistry);
         //below is to set the group//
+        MediaPlayer mp = null;
         printed = (TextView) findViewById(R.id.textView5);
         choices = (RadioGroup) findViewById(R.id.choices);
         choices.setOnCheckedChangeListener(listen);
@@ -82,10 +85,14 @@ public class chemistry extends Activity {
         choiced = findViewById(R.id.choiced);
         choiced.setText(choicearray[4 * questionnumber + 3]);
         //below is to set the next button//
-        highest = (TextView) findViewById(R.id.grade);
         next = (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener(){
             public void onClick(View V) {
+                if (correctanswer[questionnumber] == youranswer[questionnumber]) {
+                    playmusic(R.raw.correct);
+                } else {
+                    playmusic(R.raw.incorrect);
+                }
                 if (questionnumber >= array.length - 1) {
                     toprinted = "Your get " + getgrade() + " questions correct";
                     printed.setText(toprinted);
@@ -131,5 +138,9 @@ public class chemistry extends Activity {
             }
         }
         return correct;
+    }
+    public void playmusic(int mid) {
+        mp = MediaPlayer.create(this, mid);
+        mp.start();
     }
 }
